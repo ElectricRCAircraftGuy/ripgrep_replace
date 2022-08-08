@@ -3,6 +3,34 @@
 [>> Become my 1st Sponsor on GitHub <<](https://github.com/sponsors/ElectricRCAircraftGuy)
 
 
+# Table of Contents
+<details>
+<summary><b>(click to expand)</b></summary>
+<!-- MarkdownTOC -->
+
+1. [Help needed](#help-needed)
+1. [ripgrep_replace \(`rgr`\)](#ripgrep_replace-rgr)
+1. [ripgrep_fuzzyfinder \(`rgf`\)](#ripgrep_fuzzyfinder-rgf)
+1. [Other, very-useful repos:](#other-very-useful-repos)
+1. [Status](#status)
+1. [Installation](#installation)
+1. [How to clone this repo and all git submodules](#how-to-clone-this-repo-and-all-git-submodules)
+
+<!-- /MarkdownTOC -->
+</details>
+
+
+<a id="help-needed"></a>
+# Help needed
+
+I need some testers on Mac and Windows! If you have those operating systems, please get this script running and document how you did it in a new Issue on this repo. I can then add your instructions to the "Installation" section in this readme, below.
+
+- [x] test on Linux Ubuntu
+- [ ] test on MacOS
+- [ ] test on Windows
+
+
+<a id="ripgrep_replace-rgr"></a>
 # ripgrep_replace (`rgr`)
 
 ripgrep_replace, or `rgr`, is a light-weight wrapper around [ripgrep](https://github.com/BurntSushi/ripgrep) (`rg`), supporting 100% of ripgrep's features + adding `-R` to enable on-disk find-and-replace!
@@ -20,32 +48,28 @@ The Ripgrep author [says here](https://github.com/BurntSushi/ripgrep/issues/74#i
 Ripgrep_replace's primary purpose, therefore, is to add "replace in files" to ripgrep via the `-R` option. See `rgr -h` for details.
 
 
+<a id="ripgrep_fuzzyfinder-rgf"></a>
 # ripgrep_fuzzyfinder (`rgf`)
 
 todo
 
 
+<a id="other-very-useful-repos"></a>
 # Other, very-useful repos:
 1. My [eRCaGuy_dotfiles](https://github.com/ElectricRCAircraftGuy/eRCaGuy_dotfiles) repo.
 1. My [eRCaGuy_hello_world](https://github.com/ElectricRCAircraftGuy/eRCaGuy_hello_world) repo.
-
-
-# Table of Contents
-<details>
-<summary><b>(click to expand)</b></summary>
-<!-- MarkdownTOC -->
-
-1. [Status](#status)
-1. [How to clone this repo and all git submodules](#how-to-clone-this-repo-and-all-git-submodules)
-
-<!-- /MarkdownTOC -->
-</details>
 
 
 <a id="status"></a>
 # Status
 
 Both `rgr` and `rgf` are done and fully implemented and work well. 
+
+
+<a id="installation"></a>
+# Installation
+
+todo
 
 
 <a id="how-to-clone-this-repo-and-all-git-submodules"></a>
