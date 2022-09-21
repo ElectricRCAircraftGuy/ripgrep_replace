@@ -86,12 +86,16 @@ TODO:
 1. [ ] Allow `rgf` to search the file **names** too, which it currently doesn't. As a temporary work-around, you can do this, however, to search file _names_ as well:
     ```bash
     rg search_string | fzf
+    # with color and line numbers
+    rg --color always -n search_string | fzf --ansi
 
     # OR, to fuzzy search **everything**! 
     # NB: this can potentially take a lot of RAM (many gigabytes), because it 
     # loads **all file contents** in this folder and down into RAM, to be
     # searched.   
     rg --hidden -L '' | fzf
+    # With color and line numbers
+    rg --hidden -L --color always -n '' | fzf --ansi
     ```
 1. [ ] Add a preview window to see inside the file live while searching. This requires the `bat` tool. See this example and screenshot, for instance: https://github.com/junegunn/fzf/blob/master/ADVANCED.md#using-fzf-as-interative-ripgrep-launcher. Be sure to add the installation commands of `bat` to the top of `rgf` once you add this dependency. 
 1. [ ] Add a feature that keeps the last screen of `fzf` output still on the screen even after killing the program and exiting. This would be like what the `-X` does in `less -RFX filename` (see [here](https://stackoverflow.com/a/61961629/4561887)).
