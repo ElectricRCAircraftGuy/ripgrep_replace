@@ -20,7 +20,16 @@ IFS=: read -ra selected < <(
       --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
 )
 # [ -n "${selected[0]}" ] && vim "${selected[0]}" "+${selected[1]}"
-[ -n "${selected[0]}" ] && subl "${selected[0]}" #"+${selected[1]}"
+# [ -n "${selected[0]}" ] && subl "${selected[0]}" #"+${selected[1]}"
+
+editor="subl"
+# editor="vim"
+# editor="micro"
+if [ -n "${selected[0]}" ]; then
+  echo "Opening file \"${selected[0]}\"."
+  echo "$editor \"${selected[0]}\""
+  $editor "${selected[0]}"
+fi
 
 ######### GS changed bat to cat above
       # --preview 'bat --color=always {1} --highlight-line {2}' \
