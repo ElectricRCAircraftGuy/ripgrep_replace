@@ -16,8 +16,8 @@
 # 3. Install `bat` (used by fzf for file previews): https://github.com/sharkdp/bat
 #    Install the latest release from here: https://github.com/sharkdp/bat/releases
 #    Ex:
-#       wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb
-#       sudo dpkg -i bat-musl_0.22.1_amd64.deb
+#       wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_amd64.deb
+#       sudo dpkg -i bat-musl_0.23.0_amd64.deb
 # 4. Create a symlink in ~/bin to this script so you can run it from anywhere.
 #       cd /path/to/here
 #       mkdir -p ~/bin
