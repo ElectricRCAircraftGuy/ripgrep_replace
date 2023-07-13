@@ -14,11 +14,10 @@ USER_PREFIX="gs_"
 
 # Required dependencies
 RG_DESIRED_VERSION="13.0.0"  # use latest from here: https://github.com/BurntSushi/ripgrep/releases
-FZF_DESIRED_VERSION="0.38.0" # use latest from here: https://github.com/junegunn/fzf/releases
-BAT_DESIRED_VERSION="0.22.1" # use latest from here: https://github.com/sharkdp/bat/releases
+FZF_DESIRED_VERSION="0.42.0" # use latest from here: https://github.com/junegunn/fzf/releases
+BAT_DESIRED_VERSION="0.23.0" # use latest from here: https://github.com/sharkdp/bat/releases
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ END ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 
 RETURN_CODE_SUCCESS=0
@@ -56,3 +55,7 @@ echo "Done"
 
 
 ######## version sorting!: https://stackoverflow.com/a/4024263/4561887
+
+# Linux: begin with `uname`. If that passes then check Ubuntu via `lsb_release -ds | awk '{print $1}'`. Then automatically install everything!
+# Windows: check for `choco`, and tell them to use it to install rg, fzf, bat. Then manually install the rest of my stuff for them.
+# In readme, link to my answer here for both Windows and other linux distros: https://stackoverflow.com/a/76666895/4561887
