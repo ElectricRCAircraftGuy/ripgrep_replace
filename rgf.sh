@@ -9,21 +9,42 @@
 # See: https://github.com/junegunn/fzf#3-interactive-ripgrep-integration
 
 # INSTALLATION INSTRUCTIONS:
+#
+# Install dependencies:
+#
 # 1. Install RipGrep: https://github.com/BurntSushi/ripgrep#installation; Ex:
+#
 #       sudo apt update
 #       sudo apt install ripgrep
+#
+#   OR (preferred, to get the latest version)
+#
+#       cd /tmp
+#       curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+#       sudo dpkg -i ripgrep_13.0.0_amd64.deb
+#
 # 2. Install `fzf` fuzzy finder: https://github.com/junegunn/fzf#installation
-#    The "Using git" instructions there, for instance, work great.
-# 3. Install `bat` (used by fzf for file previews): https://github.com/sharkdp/bat
+#    The "Using git" instructions there, for instance, work great:
+#
+#       git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#       ~/.fzf/install
+#
+# 3. Install `bat` (colored `cat`--used by fzf for file previews): https://github.com/sharkdp/bat
 #    Install the latest release from here: https://github.com/sharkdp/bat/releases
 #    Ex:
+#
 #       wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_amd64.deb
 #       sudo dpkg -i bat-musl_0.23.0_amd64.deb
+#
+# Install `rgf`:
+#
 # 4. Create a symlink in ~/bin to this script so you can run it from anywhere.
+#
 #       cd /path/to/here
 #       mkdir -p ~/bin
 #       ln -si "${PWD}/rgf.sh" ~/bin/rgf     # required
 #       ln -si "${PWD}/rgf.sh" ~/bin/gs_rgf  # optional; replace "gs" with your initials
+#
 # 5. Now you can use this command directly anywhere you like in any of these ways:
 #   1. `rgf`
 #   2. `gs_rgf`
