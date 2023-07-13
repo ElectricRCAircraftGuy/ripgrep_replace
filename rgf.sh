@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# This file is part of eRCaGuy_dotfiles: https://github.com/ElectricRCAircraftGuy/eRCaGuy_dotfiles
+# This file is part of ElectricRCAircraftGuy/ripgrep_replace:
+# https://github.com/ElectricRCAircraftGuy/ripgrep_replace
 
 # RipGrep Fuzzyfinder (rgf)
 # This is a simple script that turns RipGrep (`rg`) into a simple interactive fuzzy finder to find
