@@ -15,6 +15,7 @@
 1. [Status](#status)
 1. [Installation](#installation)
 1. [ripgrep_replace \(`rgr`\)](#ripgrep_replace-rgr)
+    1. [Example usage:](#example-usage)
 1. [ripgrep_fuzzyfinder \(`rgf`\)](#ripgrep_fuzzyfinder-rgf)
 1. [Fuzzy searching for files by filename: manually, and with `sublf`](#fuzzy-searching-for-files-by-filename-manually-and-with-sublf)
 1. [Alternatives to `rgr`](#alternatives-to-rgr)
@@ -70,6 +71,57 @@ The Ripgrep author [says here](https://github.com/BurntSushi/ripgrep/issues/74#i
 > There is no hope. It will never happen. Final decision.
 
 Ripgrep_replace's primary purpose, therefore, is to add "replace in files" to ripgrep via the `-R` option. See `rgr -h` for details.
+
+<a id="example-usage"></a>
+#### Example usage:
+
+Let's standardize the delimiters in a CSV data log file. Imagine it used commas (`,`) and tabs (`\t`) as column delimiters, and you just want to force all groups of commas and tabs to be replaced by simple commas so that you can parse the data easier. Here is how:
+
+```bash
+# Find all files which end in .log. This allows you to ensure it will only
+# affect the files you want it to affect.
+rg '' -g '*.log' -l | sort -V
+
+# do a dry-run replacement to replace all delimiters of commas or tabs
+# (treating sequential chars as a single delimiter), to replace them with a
+# comma
+time rg '[,\t]+' -r ',' -g '*.log'
+
+# Now ensure rgr has the same dry-run output as above
+time rgr '[,\t]+' -r ',' -g '*.log'
+
+# CAUTION: DO A DRY-RUN ABOVE FIRST! Now use `-R` to actually do the
+# replacement. THIS WILL OVERWRITE YOUR FILES! It updates them in-place.
+time rgr '[,\t]+' -R ',' -g '*.log'
+```
+
+Note: even better, for the above usage, just use Python and the Pandas data analysis module though. See: https://github.com/ElectricRCAircraftGuy/eRCaGuy_hello_world/blob/master/python/pandas_read_csv_write_to_csv__convert_csv_delimiters.py. Simplified example:
+```py
+import pandas as pd 
+
+file_in = "data.log"
+file_out = "data.csv"
+
+# read a file in which may have any number or mixed combination of commas or tabs as separators
+dataframe = pd.read_csv(
+    file_in,
+    sep=r"[,\t]+", # allow any number of either commas or tabs as the separator
+    header=0,  # the first non-blank row is the header
+    # NB: using the "python" engine instead of the default "c" engine is much slower, but allows
+    # us to have a regex `sep` separator value above, instead of just specifying a single
+    # character. When logging files, just use a plain, single comma (`,`) as the separator in
+    # order to avoid this problem.
+    engine="python",
+    skip_blank_lines=True,
+)
+
+# write a pure CSV file out, using only a single comma as the separator
+dataframe.to_csv(file_out, sep=",", index=False)
+
+# Now you can import it next time like this:
+file_in = "data.csv"
+dataframe = pd.read_csv(file_in)
+```
 
 
 <a id="ripgrep_fuzzyfinder-rgf"></a>
