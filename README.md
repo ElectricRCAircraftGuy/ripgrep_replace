@@ -14,6 +14,7 @@
 1. [Help needed](#help-needed)
 1. [Status](#status)
 1. [Installation](#installation)
+1. [ripgrep fuzzyfinder with preview window \(`rgf2`\)](#ripgrep-fuzzyfinder-with-preview-window-rgf2)
 1. [ripgrep_replace \(`rgr`\)](#ripgrep_replace-rgr)
     1. [Example usage:](#example-usage)
 1. [ripgrep_fuzzyfinder \(`rgf`\)](#ripgrep_fuzzyfinder-rgf)
@@ -53,6 +54,38 @@ TODO:
     ```bash
     wget https://github.com/ElectricRCAircraftGuy/ripgrep_replace/blob/main/install.sh -O /tmp/ && /tmp/install.sh
     ```
+
+
+<a id="ripgrep-fuzzyfinder-with-preview-window-rgf2"></a>
+# ripgrep fuzzyfinder with preview window (`rgf2`)
+
+#### How to use `rgf2`
+
+`cd` into any location you want, and run `rgf2`. Search for anything you want. It will recursively search all files in all directories at this point and down, showing a preview of the match in the file, with surrounding context, in the top pane. 
+
+By default it does a ripgrep search. Notice the instructions at the very bottom: 
+
+> / CTRL-R (Ripgrep mode) / CTRL-F (fzf mode) /
+
+Press <kbd>Ctrl</kbd> + <kbd>F</kbd> to switch to fzf fuzzy search mode. Press <kbd>Ctrl</kbd> + <kbd>R</kbd> to switch back to ripgrep search mode.
+
+Press <kbd>Ctrl</kbd> + <kbd>Q</kbd> or <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit the program.
+
+Here is a screenshot of what it looks like doing a _ripgrep_ search for `installation` in this very repo: 
+
+<p align="left" width="100%">
+    <a href="images/rgf2_ripgrep_demo.jpg">
+        <img width="90%" src="images/rgf2_ripgrep_demo.jpg"> 
+    </a>
+</p>
+
+Here is what it looks like doing an _fzf_ fuzzy search for `insation`, which finds the same thing:
+
+<p align="left" width="100%">
+    <a href="images/rgf2_fzf_demo.jpg">
+        <img width="90%" src="images/rgf2_fzf_demo.jpg"> 
+    </a>
+</p>
 
 
 <a id="ripgrep_replace-rgr"></a>
