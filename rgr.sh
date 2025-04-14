@@ -419,7 +419,9 @@ main() {
         file_changes_and_stats_in_color="$(rg "${args_array_final_with_color[@]}")"
         file_changes_in_color="$(printf "%s" "$file_changes_and_stats_in_color" | head -n -$NUM_STATS_LINES)"
 
-        file_contents="$(rg "${args_array_final[@]}")"
+        # https://stackoverflow.com/questions/16991270/newlines-at-the-end-get-removed-in-shell-scripts-why
+        file_contents="$(rg "${args_array_final[@]}"; echo .)"
+        file_contents="${file_contents%.}"
 
         if [ "$stats_on" == "true" ]; then
             printf "%s\n\n" "$file_changes_and_stats_in_color"
