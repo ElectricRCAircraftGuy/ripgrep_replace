@@ -22,9 +22,12 @@ IFS=: read -ra selected < <(
 # [ -n "${selected[0]}" ] && vim "${selected[0]}" "+${selected[1]}"
 # [ -n "${selected[0]}" ] && subl "${selected[0]}" #"+${selected[1]}"
 
-editor="subl"
+# Choose a text editor in which to open the selected file when you press Enter.
+# editor="subl" # Sublime Text
 # editor="vim"
 # editor="micro"
+editor="code" # Visual Studio Code
+
 if [ -n "${selected[0]}" ]; then
   echo "Opening file \"${selected[0]}\"."
   echo "$editor \"${selected[0]}\""
